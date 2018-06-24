@@ -1,0 +1,24 @@
+.dropdown-content {
+	display: none;
+}
+
+.dropdown-container1:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-container2:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-container3:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-container4:hover .dropdown-content {
+	display: block;
+}
+
+#deconnexion {
+	position: absolute;
+    bottom: 0;
+}
