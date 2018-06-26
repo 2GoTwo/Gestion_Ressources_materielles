@@ -34,8 +34,8 @@ public class DemandeServiceImpl implements DemandeService{
 	}
 
 	@Override
-	public Demande chercherDemande(String reference) {
-		// TODO Auto-generated method stub
-		return null;
+	public Demande chercherDemande(Integer demandeId) {
+		
+		return demandeRepository.getOne(demandeId);
 	}
 }

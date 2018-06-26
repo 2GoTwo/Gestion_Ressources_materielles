@@ -33,6 +33,7 @@ public class DemandeController  {
     public String addMaterielForm(Model model)
     {
     	Demande demande  = new Demande();
+    	demande.setEtat("Non Traitee");
     	model.addAttribute("demande",demande);
     	return "addDemande";
     }
@@ -44,16 +45,21 @@ public class DemandeController  {
     	return "redirect:/demande";
     }
     
-    @RequestMapping(value = "/supprimer",method = RequestMethod.GET)
-    public String supprimerMateriel(@RequestParam(value = "q") Integer inventaireId)
+    @RequestMapping(value = "/accepter",method = RequestMethod.GET)
+    public String supprimerMateriel(@RequestParam(value = "q") Integer demandeId)
     {
-    	
+    	Demande demande = demandeService.chercherDemande(demandeId);
+    	demande.setEtat("Traitee");
+    	demandeService.ajouterDemande(demande);
     	return "redirect:/demande";
     }
     
-    @RequestMapping(value = "/editer",method = RequestMethod.GET)
-    public String editerMateriel(@RequestParam(value = "q") Integer inventaireId)
+    @RequestMapping(value = "/refuser",method = RequestMethod.GET)
+    public String editerMateriel(@RequestParam(value = "q") Integer demandeId)
     {
+    	Demande demande = demandeService.chercherDemande(demandeId);
+    	demande.setEtat("Non Traitee");
+    	demandeService.ajouterDemande(demande);
     	return "redirect:/demande";
     }
 }

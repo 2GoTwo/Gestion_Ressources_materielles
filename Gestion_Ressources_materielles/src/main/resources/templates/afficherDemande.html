@@ -24,7 +24,7 @@
 <!-- My CSS -->
 <link href="/css/navigation.css" rel="stylesheet" />
 <!-- google -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" sizes ="30x30">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body class="">
@@ -55,6 +55,9 @@
 											<th>dateSouhaitee</th>
 											<th>Demandeur</th>
 											<th>EmailDemandeur</th>
+											<th>Etat</th>
+											<th>Accepter</th>
+											<th>Refuser</th>
 										</thead>
 										<tbody>
 											<tr th:each="demande : ${demandes}">
@@ -64,13 +67,14 @@
 												<td th:text="${demande.dateSouhaitee}"></td>
 												<td th:text="${demande.demandeur}"></td>
 												<td th:text="${demande.emailDemandeur}"></td>
-												<td class="text-right"><a class="btn btn-success"
-													th:href=@{/demande/editer(q=${demande.demandeId})}>
-														<img src="/img/icons/edit.png" height = "20px"/>
+												<td th:text="${demande.etat}"></td>
+												<td><a class="btn btn-success"
+													th:href=@{/demande/accepter(q=${demande.demandeId})}>
+														<img src="/img/icons/accepter.png" height = "15px"/>
 												</a></td>
 												<td class="text-right"><a class="btn btn-danger"
-													th:href=@{/demande/supprimer(q=${demande.demandeId})}>
-													<img src="/img/icons/delete.png" height = "20px"/></a></td>
+													th:href=@{/demande/refuser(q=${demande.demandeId})}>
+													<img src="/img/icons/refuser.png" height = "15px"/></a></td>
 											</tr>
 										</tbody>
 									</table>

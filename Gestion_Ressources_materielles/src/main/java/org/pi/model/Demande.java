@@ -31,6 +31,7 @@ public class Demande implements Serializable{
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date dateSouhaitee;
 	private String description;
+	private String etat;
 	public Demande() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -94,6 +95,12 @@ public class Demande implements Serializable{
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getEtat() {
+		return etat;
+	}
+	public void setEtat(String etat) {
+		this.etat = etat;
 	}
 	
 }

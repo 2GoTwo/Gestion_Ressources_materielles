@@ -9,6 +9,6 @@ public interface DemandeService {
 	public Demande ajouterDemande(Demande demande);
 	public Demande editerDemande(Demande demande);
 	public void supprimerDemande(Integer demandeId);	
-	public Demande chercherDemande(String reference);
+	public Demande chercherDemande(Integer demandeId);
 	
 }
