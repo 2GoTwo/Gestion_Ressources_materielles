@@ -9,20 +9,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "INVENTAIRE")
 public class Inventaire implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int inventaireId;
 	private String reference;
 	private String type;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date dateAcquisition;
 	private String local;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date dateSortie;
 	private String description;
+	private Etat etat;
+	private String marque;
 
 	public Inventaire() {
 		super();
@@ -76,11 +82,27 @@ public class Inventaire implements Serializable {
 		this.dateSortie = dateSortie;
 	}
 
-	public String getDestinataire() {
+	public String getDescription() {
 		return description;
 	}
 
-	public void setDestinataire(String destinataire) {
-		this.description = destinataire;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Etat getEtat() {
+		return etat;
+	}
+
+	public void setEtat(Etat etat) {
+		this.etat = etat;
+	}
+
+	public String getMarque() {
+		return marque;
+	}
+
+	public void setMarque(String marque) {
+		this.marque = marque;
 	}
 }
