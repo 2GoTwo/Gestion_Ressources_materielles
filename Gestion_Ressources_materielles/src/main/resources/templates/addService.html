@@ -6,7 +6,7 @@
 <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>Materiel</title>
+<title>Service</title>
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
 	name='viewport' />
@@ -40,62 +40,50 @@
 
 					<div class="card">
 						<div class="card-header">
-							<h5 class="title">Ajouter un materiel</h5>
+							<h5 class="title">Ajouter un service</h5>
 						</div>
 						<div class="card-body">
-							<form th:object = "${inventaire}" method = "POST" th:action="@{/inventaire/addMateriel}">
+							<form th:object = "${service}" method = "POST" th:action="@{/service/addMateriel}">
 								<div class="row">
 									<div class="col-md-6 pr-1">
 										<div class="form-group">
-											<label>Reference</label> <input
-												type="text" class="form-control" placeholder="Reference"
-												value="" th:field = "*{reference}">
-										</div>
-									</div>
-									<div class="col-md-4 pl-1">
-										<div class="form-group">
-											<label for="type">Type <span style="color: red;">*</span></label>
-											<input class="form-control" placeholder="Type" th:field = "*{type}">
+											<label>Type</label> <input
+												type="text" class="form-control" placeholder="Type"
+												value="" th:field = "*{type}">
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-6 pr-1">
 										<div class="form-group">
-											<label>Marque <span style="color: red;">*</span></label> <input
-												type="text" class="form-control" placeholder="Marque"
-												value="" th:field = "*{marque}">
+											<label>Demandeur <span style="color: red;">*</span></label> <input
+												type="text" class="form-control" placeholder="Demandeur"
+												value="" th:field = "*{demandeur}">
 										</div>
 									</div>
 									<div class="col-md-6 pl-1">
 										<div class="form-group">
-											<label>Etat <span style="color: red;">*</span></label> <input
-												type="text" class="form-control" placeholder="Etat" value=""
-												th:field = "*{etat}">
+											<label> </label> <input
+												type="text" class="form-control" placeholder="Email Demandeur" value=""
+												th:field = "*{emailDemandeur}">
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<label>Local <span style="color: red;">*</span></label> <input
+											<label>L'objet <span style="color: red;">*</span></label> <input
 												type="text" class="form-control" placeholder="Local"
-												value="" th:field = "*{local}">
+												value="" th:field = "*{object}">
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-4 pr-1">
 										<div class="form-group">
-											<label>Date d'aquisition <span style="color: red;">*</span></label>
+											<label>date Souhaitee <span style="color: red;">*</span></label>
 											<input type="date" class="form-control"
-												placeholder="Date d'aquisition ex : (yyyy/MM/dd)" value="" th:field = "*{dateAcquisition}">
-										</div>
-									</div>
-									<div class="col-md-4 pl-1">
-										<div class="form-group">
-											<label>Quantite</label> <input type="number"
-												class="form-control" placeholder="Quantite" th:field = "*{quantite}">
+												placeholder="Date Souhaitee ex : (yyyy/MM/dd)" value="" th:field = "*{dateSouhaitee}">
 										</div>
 									</div>
 								</div>
@@ -110,7 +98,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-4">
-										<button class="btn btn-primary btn-block" type="submit">Ajouter</button>
+										<button class="btn btn-primary btn-block" type="submit">Enregistrer</button>
 									</div>
 								</div>
 							</form>

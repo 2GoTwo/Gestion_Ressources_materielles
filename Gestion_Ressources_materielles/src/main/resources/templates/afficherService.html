@@ -6,7 +6,7 @@
 <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>DEMANDE</title>
+<title>SERVICE</title>
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
 	name='viewport' />
@@ -24,8 +24,7 @@
 <!-- My CSS -->
 <link href="/css/navigation.css" rel="stylesheet" />
 <!-- google -->
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body class="">
@@ -44,38 +43,36 @@
 					<div class="col-md-12">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title">Liste des demandes</h4>
+								<h4 class="card-title">Liste des services</h4>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table">
 										<thead class=" text-primary">
-											<th>Categorie</th>
 											<th>Type</th>
-											<th>Quantite</th>
 											<th>Demandeur</th>
-											<th>EmailDemandeur</th>
-											<th>date Souhaitee</th>
+											<th>Email Demandeur</th>
+											<th>Date Demande Service</th>
+											<th>Date Souhaitee</th>
 											<th>Etat</th>
 											<th>Accepter</th>
 											<th>Refuser</th>
 										</thead>
 										<tbody>
-											<tr th:each="demande : ${demandes}">
-												<td th:text="${demande.typeCategorie}"></td>
-												<td th:text="${demande.type}"></td>
-												<td th:text="${demande.quantite}"></td>
-												<td th:text="${demande.demandeur}"></td>
-												<td th:text="${demande.emailDemandeur}"></td>
-												<td th:text="${demande.dateSouhaitee}"></td>
-												<td th:text="${demande.etat}"></td>
+											<tr th:each="service : ${services}">
+												<td th:text="${service.type}"></td>
+												<td th:text="${service.demandeur}"></td>
+												<td th:text="${service.emailDemandeur}"></td>
+												<td th:text="${service.dateDemandeService}"></td>
+												<td th:text="${service.dateSouhaitee}"></td>
+												<td th:text="${service.etat}"></td>
 												<td><a class="btn btn-success"
-													th:href=@{/demande/accepter(q=${demande.demandeId})}> <img
-														src="/img/icons/accepter.png" height="15px" />
+													th:href=@{/service/accepter(q=${service.serviceId})}>
+														<img src="/img/icons/accepter.png" height = "15px"/>
 												</a></td>
 												<td class="text-right"><a class="btn btn-danger"
-													th:href=@{/demande/refuser(q=${demande.demandeId})}> <img
-														src="/img/icons/refuser.png" height="15px" /></a></td>
+													th:href=@{/service/refuser(q=${service.serviceId})}>
+													<img src="/img/icons/refuser.png" height = "15px"/></a></td>
 											</tr>
 										</tbody>
 									</table>
@@ -91,8 +88,9 @@
 					<div>
 						<ul class="nav nav-pills" id="barPagination">
 							<li class="nav-item"
-								th:each="i : ${#numbers.sequence(0,demandes.totalPages-1)}">
-								<a class="nav-link" th:text="${i}" th:href="@{/demande(p=${i})}"
+								th:each="i : ${#numbers.sequence(0,services.totalPages-1)}">
+								<a class="nav-link" th:text="${i}"
+								th:href="@{/service(p=${i})}"
 								th:classappend="${currentPage}==${i}?'active':''"></a>
 							</li>
 						</ul>

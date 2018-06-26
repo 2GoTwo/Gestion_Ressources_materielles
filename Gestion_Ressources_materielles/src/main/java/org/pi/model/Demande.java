@@ -42,35 +42,17 @@ public class Demande implements Serializable{
 	public void setDemandeId(int demandeId) {
 		this.demandeId = demandeId;
 	}
-	public String getType() {
-		return typeCategorie;
-	}
-	public void setType(String type) {
-		this.typeCategorie = type;
-	}
-	public String getArticle() {
-		return type;
-	}
-	public void setArticle(String article) {
-		this.type = article;
-	}
-	public Integer getQuantite() {
-		return quantite;
-	}
-	public void setQuantite(Integer quantite) {
-		this.quantite = quantite;
-	}
-	public Date getDateSouhaitee() {
-		return dateSouhaitee;
-	}
-	public void setDateSouhaitee(Date dateSouhaitee) {
-		this.dateSouhaitee = dateSouhaitee;
-	}
 	public String getTypeCategorie() {
 		return typeCategorie;
 	}
 	public void setTypeCategorie(String typeCategorie) {
 		this.typeCategorie = typeCategorie;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	public Date getDateDemande() {
 		return dateDemande;
@@ -90,6 +72,18 @@ public class Demande implements Serializable{
 	public void setEmailDemandeur(String emailDemandeur) {
 		this.emailDemandeur = emailDemandeur;
 	}
+	public Integer getQuantite() {
+		return quantite;
+	}
+	public void setQuantite(Integer quantite) {
+		this.quantite = quantite;
+	}
+	public Date getDateSouhaitee() {
+		return dateSouhaitee;
+	}
+	public void setDateSouhaitee(Date dateSouhaitee) {
+		this.dateSouhaitee = dateSouhaitee;
+	}
 	public String getDescription() {
 		return description;
 	}
@@ -102,5 +96,6 @@ public class Demande implements Serializable{
 	public void setEtat(String etat) {
 		this.etat = etat;
 	}
+	
 	
 }

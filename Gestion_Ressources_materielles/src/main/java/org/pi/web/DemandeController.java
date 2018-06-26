@@ -39,14 +39,14 @@ public class DemandeController  {
     }
     
     @RequestMapping(value = "/addDemande",method = RequestMethod.POST)
-    public String addMateriel(Inventaire inventaire)
+    public String addMateriel(Demande demande)
     {
-    	
+    	demandeService.ajouterDemande(demande);
     	return "redirect:/demande";
     }
     
     @RequestMapping(value = "/accepter",method = RequestMethod.GET)
-    public String supprimerMateriel(@RequestParam(value = "q") Integer demandeId)
+    public String accepterDemande(@RequestParam(value = "q") Integer demandeId)
     {
     	Demande demande = demandeService.chercherDemande(demandeId);
     	demande.setEtat("Traitee");
@@ -55,7 +55,7 @@ public class DemandeController  {
     }
     
     @RequestMapping(value = "/refuser",method = RequestMethod.GET)
-    public String editerMateriel(@RequestParam(value = "q") Integer demandeId)
+    public String refuserDemadne(@RequestParam(value = "q") Integer demandeId)
     {
     	Demande demande = demandeService.chercherDemande(demandeId);
     	demande.setEtat("Non Traitee");

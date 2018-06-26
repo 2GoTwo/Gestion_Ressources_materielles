@@ -1,7 +1,6 @@
 package org.pi.web;
 
 import org.pi.business.inventaire.InventaireService;
-import org.pi.business.inventaire.InventaireServiceImpl;
 import org.pi.model.Inventaire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

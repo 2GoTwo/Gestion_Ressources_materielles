@@ -28,3 +28,10 @@ insert into demande
 values
 ('bahi','ordinateur'),
 ('nadif','imprimante');
+
+
+insert into service 
+(email_demandeur)
+values
+('meskine.wassif@gmail.com'),
+('nadif.yassine@gmail.com');
