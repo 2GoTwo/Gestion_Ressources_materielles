@@ -29,6 +29,7 @@ public class Inventaire implements Serializable {
 	private String description;
 	private Etat etat;
 	private String marque;
+	private Integer quantite;
 
 	public Inventaire() {
 		super();
@@ -104,5 +105,13 @@ public class Inventaire implements Serializable {
 
 	public void setMarque(String marque) {
 		this.marque = marque;
+	}
+
+	public Integer getQuantite() {
+		return quantite;
+	}
+
+	public void setQuantite(Integer quantite) {
+		this.quantite = quantite;
 	}
 }

@@ -43,39 +43,33 @@
 					<div class="col-md-12">
 						<div class="card">
 							<div class="card-header">
-								<h4 class="card-title">Liste des materiaux</h4>
+								<h4 class="card-title">Liste des demandes</h4>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table">
 										<thead class=" text-primary">
-											<th>Reference</th>
+											<th>Categorie</th>
 											<th>Type</th>
-											<th>Marque</th>
-											<th>Date d'acquisition</th>
-											<th>Local</th>
-											<th>Etat</th>
 											<th>Quantite</th>
-											<th>Date sortie</th>
-											<th class="text-right">Editer</th>
-											<th class="text-right">Supprimer</th>
+											<th>dateSouhaitee</th>
+											<th>Demandeur</th>
+											<th>EmailDemandeur</th>
 										</thead>
 										<tbody>
-											<tr th:each="materiel : ${inventaire}">
-												<td th:text="${materiel.reference}"></td>
-												<td th:text="${materiel.type}"></td>
-												<td th:text="${materiel.marque}"></td>
-												<td th:text="${materiel.dateAcquisition}"></td>
-												<td th:text="${materiel.local}"></td>
-												<td th:text="${materiel.etat}"></td>
-												<td th:text="${materiel.quantite}"></td>
-												<td th:text="${materiel.dateSortie}"></td>
+											<tr th:each="demande : ${demandes}">
+												<td th:text="${demande.typeCategorie}"></td>
+												<td th:text="${demande.type}"></td>
+												<td th:text="${demande.quantite}"></td>
+												<td th:text="${demande.dateSouhaitee}"></td>
+												<td th:text="${demande.demandeur}"></td>
+												<td th:text="${demande.emailDemandeur}"></td>
 												<td class="text-right"><a class="btn btn-success"
-													th:href=@{/inventaire/editer(q=${materiel.inventaireId})}>
+													th:href=@{/demande/editer(q=${demande.demandeId})}>
 														<img src="/img/icons/edit.png" height = "20px"/>
 												</a></td>
 												<td class="text-right"><a class="btn btn-danger"
-													th:href=@{/inventaire/supprimer(q=${materiel.inventaireId})}>
+													th:href=@{/demande/supprimer(q=${demande.demandeId})}>
 													<img src="/img/icons/delete.png" height = "20px"/></a></td>
 											</tr>
 										</tbody>
@@ -92,9 +86,9 @@
 					<div>
 						<ul class="nav nav-pills" id="barPagination">
 							<li class="nav-item"
-								th:each="i : ${#numbers.sequence(0,inventaire.totalPages-1)}">
+								th:each="i : ${#numbers.sequence(0,demandes.totalPages-1)}">
 								<a class="nav-link" th:text="${i}"
-								th:href="@{/inventaire(p=${i})}"
+								th:href="@{/demande(p=${i})}"
 								th:classappend="${currentPage}==${i}?'active':''"></a>
 							</li>
 						</ul>

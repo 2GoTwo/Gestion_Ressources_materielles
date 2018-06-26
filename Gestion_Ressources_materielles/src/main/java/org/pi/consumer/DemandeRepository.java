@@ -1,0 +1,8 @@
+package org.pi.consumer;
+
+import org.pi.model.Demande;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DemandeRepository extends JpaRepository<Demande, Integer>{
+	
+}

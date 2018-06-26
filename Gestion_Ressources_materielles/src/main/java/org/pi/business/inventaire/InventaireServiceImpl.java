@@ -1,5 +1,6 @@
 package org.pi.business.inventaire;
 
+import org.pi.consumer.InventaireRepository;
 import org.pi.model.Inventaire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class InventaireServiceImpl implements InventaireService{
 	@Autowired
-	private org.pi.consumer.InventaireRepository inventaireRepository;
+	private InventaireRepository inventaireRepository;
 
 	@Override
 	public Page<Inventaire> getAllInventaire(Pageable pageable) {
@@ -29,8 +30,7 @@ public class InventaireServiceImpl implements InventaireService{
 
 	@Override
 	public void supprimerInventaire(Integer inventaireId) {
-		// TODO Auto-generated method stub
-		
+		inventaireRepository.deleteById(inventaireId);
 	}
 
 	@Override

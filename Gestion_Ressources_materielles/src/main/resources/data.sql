@@ -21,3 +21,10 @@ values
 (7378783,DATE '2015-12-17',DATE '2015-12-17'),
 (7378783,DATE '2015-12-17',DATE '2015-12-17'),
 (7378783,DATE '2015-12-17',DATE '2015-12-17');
+
+
+insert into demande 
+(demandeur,type_categorie)
+values
+('bahi','ordinateur'),
+('nadif','imprimante');

@@ -50,28 +50,28 @@
 							class="dropdown-item" href="#">Importer</a>
 					</div></li>
 				<li class="dropdown-container2"><a
-					href="../examples/notifications.html"> <i
+					href="@{/demande}"> <i
 						class="now-ui-icons files_box"></i>
 						<p>Demandes</p>
 
 				</a>
 					<div class="dropdown-content"
 						aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="@{/demande}">Afficher demandes</a> <a
-							class="dropdown-item" href="@{/demande/addDemande}">Ajouter demande</a>
+						<a class="dropdown-item" th:href="@{/demande}">Afficher demandes</a> <a
+							class="dropdown-item" th:href="@{/demande/addDemande}">Ajouter demande</a>
 					</div></li>
 
 				<li class="dropdown-container3"><a
-					href="../examples/typography.html"> <i
+					href="#"> <i
 						class="now-ui-icons design_vector"></i>
 						<p>Services</p>
 				</a>
 					<div class="dropdown-content"
 						aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="@{/service}">Afficher services</a> <a
-							class="dropdown-item" href="@{/service/addService}">Ajouter service</a>
+						<a class="dropdown-item" th:href="@{/service}">Afficher services</a> <a
+							class="dropdown-item" th:href="@{/service/addService}">Ajouter service</a>
 					</div></li>
-				<li class="dropdown-container4"><a href="../examples/user.html">
+				<li class="dropdown-container4"><a href="#">
 						<i class="now-ui-icons users_single-02"></i>
 						<p>Utilisateurs</p>
 				</a>
@@ -81,7 +81,7 @@
 							class="dropdown-item" href="@{/user/addUser}">Ajouter Utilisateur</a>
 					</div></li>
 				<li class="active-pro" id="deconnexion"><a
-					href="../examples/upgrade.html"> <i
+					href="#"> <i
 						class="now-ui-icons media-1_button-power"></i>
 						<p>Deconnexion</p>
 				</a></li>
