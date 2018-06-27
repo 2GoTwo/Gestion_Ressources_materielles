@@ -30,6 +30,7 @@ public class User implements Serializable {
 	private String userName;
 	private String adress;
 	private String role;
+	private String description;
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date dateAjout = new Date();
 	public User() {
@@ -43,7 +44,7 @@ public class User implements Serializable {
 		this.lastName =  user.lastName;
 		this.password = user.password;
 		this.email = user.email;
-		
+		this.description = user.description;
 	}
 	public User(org.springframework.boot.autoconfigure.security.SecurityProperties.User user) {
 		// TODO Auto-generated constructor stub
@@ -95,5 +96,11 @@ public class User implements Serializable {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
