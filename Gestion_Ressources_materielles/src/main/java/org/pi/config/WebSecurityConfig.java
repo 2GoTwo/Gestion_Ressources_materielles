@@ -32,17 +32,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-//		http.csrf().disable();
-//
-//		http.authorizeRequests()
-//		.antMatchers("/resources/**", "/jquery/**","/static/**", "/css/**", "/js/**", "/images/**", "/icons/**").permitAll()
-//		.and().authorizeRequests().antMatchers("").access("hasRole('ROLE_ADMIN')")
-//		.and().formLogin().loginPage("/login").permitAll()
-//		   .usernameParameter("email").passwordParameter("password")
-//		   .and()
-//		    .logout().logoutSuccessUrl("/login?logout")
-//		    .and()
-//		    .exceptionHandling().accessDeniedPage("/403");
+		http.csrf().disable();
+
+		http.authorizeRequests()
+		.antMatchers("/resources/**", "/js/**","/static/**", "/css/**", "/js/**", "/img/**","/scss/**","/fonts/**","/").permitAll()
+		.and().authorizeRequests().antMatchers("/**/supprimer","/**/refuser","/**/accepter").access("hasRole('ROLE_ADMIN')")
+		.and().formLogin().loginPage("/").permitAll()
+		   .usernameParameter("email").passwordParameter("password").loginProcessingUrl("/connect").defaultSuccessUrl("/inventaire")
+		   .and()
+		    .logout().logoutSuccessUrl("/login?logout")
+		    .and()
+		    .exceptionHandling().accessDeniedPage("/403");
 //				
 
 	}
