@@ -24,7 +24,7 @@ public class Service implements Serializable{
 	private String object;
 	private String description;
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
-	private Date dateDemandeService;
+	private Date dateDemandeService = new Date();
 	private Date dateSouhaitee;
 	private String etat;
 	private String departement;

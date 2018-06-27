@@ -24,7 +24,7 @@ public class Demande implements Serializable{
 	private String typeCategorie;
 	private String type;
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
-	private Date dateDemande;
+	private Date dateDemande = new Date();
 	private String demandeur;
 	private String emailDemandeur;
 	private Integer quantite;
