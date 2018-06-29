@@ -40,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.and().formLogin().loginPage("/").permitAll()
 		   .usernameParameter("email").passwordParameter("password").loginProcessingUrl("/connect").defaultSuccessUrl("/inventaire")
 		   .and()
-		    .logout().logoutSuccessUrl("/login?logout")
+		    .logout().logoutSuccessUrl("/")
 		    .and()
 		    .exceptionHandling().accessDeniedPage("/403");
 //				

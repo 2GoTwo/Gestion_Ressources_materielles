@@ -23,9 +23,10 @@ public class InventaireServiceImpl implements InventaireService{
 	}
 
 	@Override
-	public Inventaire editerInventaire(Inventaire inventaire) {
-		// TODO Auto-generated method stub
-		return null;
+	public void editerInventaire(Integer inventaireId,Inventaire inventaire) {
+		Inventaire inventairex = inventaireRepository.getOne(inventaireId);
+		inventairex.setLocal(inventairex.getLocal());
+		inventaireRepository.save(inventairex);
 	}
 
 	@Override

@@ -51,9 +51,18 @@ public class InventaireController {
     	return "redirect:/inventaire";
     }
     
-    @RequestMapping(value = "/editer",method = RequestMethod.GET)
-    public String editerMateriel(@RequestParam(value = "q") Integer inventaireId)
+    @RequestMapping(value = "/editer",method = RequestMethod.POST)
+    public String editerMateriel(@RequestParam(value = "q") Integer inventaireId,Inventaire inventaire)
     {
+    	inventaireService.editerInventaire(inventaireId,inventaire);
     	return "redirect:/inventaire";
+    }
+    
+    @RequestMapping(value = "/editer",method = RequestMethod.GET)
+    public String editerMaterielForm(Model model)
+    {
+    	Inventaire inventaire = new Inventaire();
+    	model.addAttribute("inventaire",inventaire);
+    	return "editMateriel";
     }
 }

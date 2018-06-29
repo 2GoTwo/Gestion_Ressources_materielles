@@ -27,7 +27,7 @@ public class Inventaire implements Serializable {
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date dateSortie;
 	private String description;
-	private Etat etat;
+	private String etat;
 	private String marque;
 	private Integer quantite;
 
@@ -91,11 +91,11 @@ public class Inventaire implements Serializable {
 		this.description = description;
 	}
 
-	public Etat getEtat() {
+	public String getEtat() {
 		return etat;
 	}
 
-	public void setEtat(Etat etat) {
+	public void setEtat(String etat) {
 		this.etat = etat;
 	}
 

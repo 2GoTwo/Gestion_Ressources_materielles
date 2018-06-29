@@ -6,7 +6,7 @@
 <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>Enseignants</title>
+<title>Materiel</title>
 <meta
 	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
 	name='viewport' />
@@ -40,55 +40,62 @@
 
 					<div class="card">
 						<div class="card-header">
-							<h5 class="title">Ajouter un Enseignant</h5>
+							<h5 class="title">Editer le materiel</h5>
 						</div>
 						<div class="card-body">
-							<form th:object="${user}" method="POST"
-								th:action="@{/user/addUser}">
+							<form th:object = "${inventaire}" method = "POST" th:action="@{/inventaire/editMateriel}">
 								<div class="row">
 									<div class="col-md-6 pr-1">
 										<div class="form-group">
-											<label>Username</label> 
-											<input type="text"
-												class="form-control"
-												placeholder="Categorie ex : informatique" value=""
-												th:field="*{userName}">
+											<label>Reference</label> <input
+												type="text" class="form-control" placeholder="Reference"
+												value="" th:field = "*{reference}">
+										</div>
+									</div>
+									<div class="col-md-4 pl-1">
+										<div class="form-group">
+											<label for="type">Type <span style="color: red;">*</span></label>
+											<input class="form-control" placeholder="Type" th:field = "*{type}">
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-6 pr-1">
 										<div class="form-group">
-											<label>Prenom <span style="color: red;">*</span></label> <input
-												type="text" class="form-control"
-												placeholder="Prenom" value=""
-												th:field="*{firstName}">
+											<label>Marque <span style="color: red;">*</span></label> <input
+												type="text" class="form-control" placeholder="Marque"
+												value="" th:field = "*{marque}">
 										</div>
 									</div>
 									<div class="col-md-6 pl-1">
 										<div class="form-group">
-											<label>Nom <span style="color: red;">*</span></label> <input
-												type="text" class="form-control"
-												placeholder="Nom" value="" th:field = "*{lastName}">
+											<label>Etat <span style="color: red;">*</span></label> <input
+												type="text" class="form-control" placeholder="Etat" value=""
+												th:field = "*{etat}">
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<label>Email <span style="color: red;">*</span></label>
-											<input type="email" class="form-control"
-												placeholder="Email" value=""
-												th:field="*{email}">
+											<label>Local <span style="color: red;">*</span></label> <input
+												type="text" class="form-control" placeholder="Local"
+												value="" th:field = "*{local}">
 										</div>
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-12">
+									<div class="col-md-4 pr-1">
 										<div class="form-group">
-											<label>Adresse <span style="color: red;">*</span></label> <input
-												type="text" class="form-control" placeholder="Adresse"
-												value="" th:field = "*{adress}">
+											<label>Date d'aquisition <span style="color: red;">*</span></label>
+											<input type="date" class="form-control"
+												placeholder="Date d'aquisition ex : (yyyy/MM/dd)" value="" th:field = "*{dateAcquisition}">
+										</div>
+									</div>
+									<div class="col-md-4 pl-1">
+										<div class="form-group">
+											<label>Quantite</label> <input type="number"
+												class="form-control" placeholder="Quantite" th:field = "*{quantite}">
 										</div>
 									</div>
 								</div>
@@ -97,7 +104,7 @@
 										<div class="form-group">
 											<label>Description</label>
 											<textarea rows="4" cols="80" class="form-control"
-												placeholder="description" th:field="*{description}"></textarea>
+												placeholder="description"  th:field = "*{description}"></textarea>
 										</div>
 									</div>
 								</div>
@@ -125,7 +132,7 @@
 <!-- Chart JS -->
 <script src="/js/plugins/chartjs.min.js"></script>
 <!--  Notifications Plugin    -->
-<script src="/js/plugins/bootstrap-notify.js"></script>
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="/js/now-ui-dashboard.js?v=1.0.1"></script>
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
